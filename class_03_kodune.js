@@ -3,7 +3,7 @@ const fs = require("fs");
 const dateEt = require("./src/dateTimeET");
 const textRef = "txt/vanasonad.txt";
 const pageHead = '<!DOCTYPE html>\n<html lang="et">\n<head>\n\t<meta charset="utf-8">\n\t<title>Andrus Rinde, veebiprogrammeerimine</title>\n</head>\n<body>\n';
-const pageBody = '\t<h1>Andrus Rinde, veebiprogrammeerimine</h1>\n\t <p>See leht on loodud veebiprogrammeerimise kursusel <a href="https://www.tlu.ee">Tallinna Ãœlikoolis</a> ning ei sislda tÃµsiseltvÃµetavat sisu!</p>\n\t<p>Esialgu tutvusime lihtsalt HTML keelega, peatselt programmeerime.</p>\n\t<hr>';
+const pageBody = '\t<h1>Andrus Rinde, veebiprogrammeerimine</h1>\n\t <p>See leht on loodud veebiprogrammeerimise kursusel <a href="https://www.tlu.ee">Tallinna Ülikoolis</a> ning ei sislda tõsiseltvõetavat sisu!</p>\n\t<p>Esialgu tutvusime lihtsalt HTML keelega, peatselt programmeerime.</p>\n\t<hr>';
 const pageFoot = '\n</body>\n</html>';
 
 http.createServer(function(req, res){
@@ -12,7 +12,7 @@ http.createServer(function(req, res){
 		if(err){
 			res.write(pageHead);
 			res.write(pageBody);
-			res.write("\n\t<p>TÃ¤na on " + dateEt.weekDay() + " " + dateEt.fullDate() + ".</p><p>Kahjuks tÃ¤naseks Ã¼htki vanasÃµna vÃ¤lja pakkuda pole!</p>");
+			res.write("\n\t<p>Täna on " + dateEt.weekDay() + " " + dateEt.fullDate() + ".</p><p>Kahjuks tänaseks ühtki vanasõna välja pakkuda pole!</p>");
 			res.write(pageFoot);
 			return res.end();
 		} else {
@@ -24,11 +24,11 @@ http.createServer(function(req, res){
 			folkWisdomOutput += "\n\t</ol>";
 			res.write(pageHead);
 			res.write(pageBody);
-			res.write("\n\t<p>TÃ¤na on " + dateEt.weekDay() + " " + dateEt.fullDate() + ".</p>");
-			res.write("\n\t<h2>Valik Eesti vanasÃµnu</h2>")
+			res.write("\n\t<p>Täna on " + dateEt.weekDay() + " " + dateEt.fullDate() + ".</p>");
+			res.write("\n\t<h2>Valik Eesti vanasõnu</h2>")
 			res.write(folkWisdomOutput);
 			res.write(pageFoot);
 			return res.end();
 		}
 	});
-}).listen(5100);
+}).listen(5111);
